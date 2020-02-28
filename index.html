@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mano Machine Assembler</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="assembler.css">
+        <script src="assembler.js"></script>
+    </head>
+    <body>
+        <h1>Mano Machine Assembler and Disassembler</h1>
+        <div id="container">
+            <div>
+                <h2>Assembly</h2>
+                <label for="assemblyFile">Load assembly file</label>
+                <input id="assemblyFile" type="file" accept=".asm,.txt" onclick="assemblyFile.value=null" />
+                <textarea type="text" id="assemblyText" rows="30" cols="70" spellcheck="false" placeholder="Put Assembly Here or Upload File!"></textarea>    
+                <button onclick="download(assemblyText.value, 'asm')">Download Assembly</button>
+            </div>
+            <div id="controls">
+                <button type="button" id="assembleButton" onclick="assemble()">Assemble →</button> 
+                <button type="button" id="disassembleButton" onclick="disassemble()">← Disassemble</button>
+            </div>
+            <div>
+                <h2>Symbols</h2>
+                <textarea type="text" id="symbolsText" rows="30" cols="30" spellcheck="false" placeholder="Symbols will show up here!"></textarea>
+                <button onclick="download(symbolsText.value, 'sym')">Download Symbols</button>
+            </div>
+            <div id="machineCodeContainer">
+                <h2>Machine Code</h2>
+                <input id="machineFile" type="file" accept=".bin,.txt,.cdm" onclick="machineFile.value=null" />
+                <textarea type="text" id="machineText" rows="30" cols="30" spellcheck="false" placeholder="Paste Here or Upload File!"></textarea>
+                <button onclick="download(machineText.value, 'bin')">Download Machine Code</button>
+            </div>
+        </div>
+        <p>© Copyright 2020 Ryan Albrecht</p>
+    </body>
+</html> 

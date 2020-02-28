@@ -1,0 +1,110 @@
+body {
+    background-color: rgb(26, 32, 41);
+    color: wheat;
+}
+
+h2 {
+    color: #e14c4c
+}
+
+textarea {
+    background-color: rgb(209, 209, 209);
+}
+
+button {
+    background-color: #34349f;
+    color: whitesmoke;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #c5d1e6;
+        color: black;
+    }
+
+    h2 {
+        color: #7d0000
+    }
+
+    textarea {
+        background-color: whitesmoke;
+    }
+
+    button {
+        background-color: #9494f9;
+    }
+}
+
+
+/* System Fonts as used by GitHub */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 200;
+    letter-spacing: 0.015em;
+}
+
+h2 {
+    text-align: center;
+}
+
+#container {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+}
+
+#container div {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: auto;
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: pre;
+    font-family: monospace;
+    resize: none;
+}
+
+#assemblyFile, #machineFile {
+    margin-bottom: 2vh;
+}
+
+#controls {
+    margin-top: 40vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+#assembleButton {
+    display: block;
+    text-align: center;
+    margin-bottom: 5vh;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+button {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+#machineCodeContainer {
+    padding-left: 2vw;
+}
+
+#symbolsText {
+    margin-top: 8vh;
+}
