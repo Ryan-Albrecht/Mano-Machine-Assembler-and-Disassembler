@@ -9,29 +9,40 @@
     <body>
         <h1>Mano Machine Assembler and Disassembler</h1>
         <div id="container">
-            <div>
-                <h2>Assembly</h2>
-                <label for="assemblyFile">Load assembly file</label>
-                <input id="assemblyFile" type="file" accept=".asm,.txt" onclick="assemblyFile.value=null" />
-                <textarea type="text" id="assemblyText" rows="30" cols="70" spellcheck="false" placeholder="Put Assembly Here or Upload File!"></textarea>    
-                <button onclick="download(assemblyText.value, 'asm')">Download Assembly</button>
+            <div class="input-group">
+            	<div>
+            		<h2>Assembly</h2>
+	                <input id="assemblyFile" type="file" accept=".asm,.txt" onclick="assemblyFile.value=null" />
+            	</div>
+            	<div>
+            		<textarea type="text" id="assemblyText" spellcheck="false"></textarea>    
+	                <button onclick="download(assemblyText.value, 'asm')">Download&nbsp;Assembly</button>
+            	</div>
             </div>
             <div id="controls">
-                <button type="button" id="assembleButton" onclick="assemble()">Assemble →</button> 
-                <button type="button" id="disassembleButton" onclick="disassemble()">← Disassemble</button>
+                <button type="button" id="assembleButton" onclick="assemble()">Assemble&nbsp;→</button> 
+                <button type="button" id="disassembleButton" onclick="disassemble()">←&nbsp;Disassemble</button>
             </div>
-            <div>
-                <h2>Symbols</h2>
-                <textarea type="text" id="symbolsText" rows="30" cols="30" spellcheck="false" placeholder="Symbols will show up here!"></textarea>
-                <button onclick="download(symbolsText.value, 'sym')">Download Symbols</button>
+            <div class="input-group">
+            	<div>
+            		<h2>Symbols</h2>
+            	</div>
+            	<div>
+            		<textarea type="text" id="symbolsText" spellcheck="false" readonly></textarea>
+	                <button onclick="download(symbolsText.value, 'sym')">Download&nbsp;Symbols</button>
+            	</div>
             </div>
-            <div id="machineCodeContainer">
-                <h2>Machine Code</h2>
-                <input id="machineFile" type="file" accept=".bin,.txt,.cdm" onclick="machineFile.value=null" />
-                <textarea type="text" id="machineText" rows="30" cols="30" spellcheck="false" placeholder="Paste Here or Upload File!"></textarea>
-                <button onclick="download(machineText.value, 'bin')">Download Machine Code</button>
+            <div id="machineCodeContainer" class="input-group">
+            	<div>
+            		<h2>Machine Code</h2>
+	                <input id="machineFile" type="file" accept=".bin,.txt,.cdm" onclick="machineFile.value=null" />
+            	</div>
+            	<div>
+            		<textarea type="text" id="machineText" spellcheck="false"></textarea>
+	                <button onclick="download(machineText.value, 'bin')">Download&nbsp;Machine&nbsp;Code</button>
+            	</div> 
             </div>
         </div>
-        <p>© Copyright 2020 Ryan Albrecht</p>
+        <p id="copyright">© Copyright 2020 Ryan Albrecht</p>
     </body>
 </html> 
