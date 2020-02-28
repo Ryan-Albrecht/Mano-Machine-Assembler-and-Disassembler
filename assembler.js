@@ -173,7 +173,7 @@ function secondPath(lines){
         }
         
         if(typeof instruction.value !== 'undefined' ){
-            lineCounterHexString = lineCounter.toString(16).toUpperCase();
+            lineCounterHexString = lineCounter.toString(16).toUpperCase().padStart(3, '0');
             instructionHexWithLeadingZeros = instruction.value.toString(16).toUpperCase().padStart(4, '0');
             document.getElementById('machineText').value += `${lineCounterHexString}:   ${instructionHexWithLeadingZeros}\n`;
         }
