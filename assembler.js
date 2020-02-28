@@ -175,7 +175,7 @@ function secondPath(lines){
         if(typeof instruction.value !== 'undefined' ){
             lineCounterHexString = lineCounter.toString(16).toUpperCase();
             instructionHexWithLeadingZeros = instruction.value.toString(16).toUpperCase().padStart(4, '0');
-            document.getElementById('machineText').value += `${lineCounterHexString}:${instructionHexWithLeadingZeros}\n`;
+            document.getElementById('machineText').value += `${lineCounterHexString}:   ${instructionHexWithLeadingZeros}\n`;
         }
         
         lineCounter++;
@@ -213,8 +213,8 @@ function disassemble(){
             document.getElementById('assemblyText').value += "     " + reverseOpcodeMap[instruction & 0xF000] + " " + (instruction & 0x0FFF).toString(16).toUpperCase();
         }
         // memory reference indirect
-        else if(((instruction - 0x800) & 0xF000) in reverseOpcodeMap){
-            document.getElementById('assemblyText').value += "     " + reverseOpcodeMap[(instruction - 0x8000 ) & 0xF000] + " " + (instruction & 0x0FFF).toString(16).toUpperCase();
+        else if(((instruction - 0x8000) & 0xF000) in reverseOpcodeMap){
+            document.getElementById('assemblyText').value += "     " + reverseOpcodeMap[(instruction - 0x8000 ) & 0xF000] + " " + (instruction & 0x0FFF).toString(16).toUpperCase() + " I";
         }
         // treat as HEX data instruction
         else {
